@@ -45,7 +45,6 @@ def solve_maze(input_file, output_file, start, end, diagonal=True):
                     edges += add_edges_diagonal(bw_image, i, j)
                 else:
                     edges += add_edges(bw_image, i, j)
-                    edges += add_edges(bw_image, i, j)
     G = nx.Graph()
     G.add_weighted_edges_from(edges)
     path = nx.astar_path(G, start, end, heuristic=euclides)
